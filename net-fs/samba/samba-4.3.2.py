@@ -21,15 +21,11 @@ def prepare():
 
 def configure():
     conf("--libdir=/usr/lib \
-       --with-cachedir=/var/lib/samba \
        --with-configdir=/etc/samba \
-       --with-lockdir=/var/lib/samba \
-       --with-logfilebase=/var/log/samba \
-       --with-modulesdir=/usr/lib/samba \
+       --with-lockdir=/var/cache/samba \
        --with-pammodulesdir=/usr/lib/security \
-       --with-piddir=/run/samba \
-       --with-privatedir=/var/lib/samba/private \
-       --with-sockets-dir=/run/samba \
+       --with-piddir=/var/run \
+       --with-sockets-dir=/var/run/samba \
        --disable-rpath \
        --disable-rpath-install \
        --enable-fhs \
