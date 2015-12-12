@@ -1,0 +1,20 @@
+diff -Nuar js-1.8.5.orig/js/src/configure js-1.8.5/js/src/configure
+--- js-1.8.5.orig/js/src/configure	2011-03-31 22:08:36.000000000 +0300
++++ js-1.8.5/js/src/configure	2015-12-08 18:18:45.119792468 +0200
+@@ -13322,13 +13322,9 @@
+   case "$target_cpu" in
+     arm*)
+       if test "$GNU_CC"; then
+-        cat >> confdefs.h <<\EOF
+-#define MOZ_ARM_ARCH 1
+-EOF
+-
+-        CFLAGS="$CFLAGS -march=armv7-a -marm -mfloat-abi=softfp $MOZ_ARM_VFP_FLAGS"
+-        CXXFLAGS="$CXXFLAGS -march=armv7-a -marm -mfloat-abi=softfp $MOZ_ARM_VFP_FLAGS"
+-        ASFLAGS="$ASFLAGS -march=armv7-a -marm -mfloat-abi=softfp $MOZ_ARM_VFP_FLAGS"
++        CFLAGS="$CFLAGS"
++        CXXFLAGS="$CXXFLAGS"
++        ASFLAGS="$ASFLAGS"
+       else
+         { echo "configure: error: --with-cpu-arch=armv7 is not supported for non-GNU toolchains" 1>&2; exit 1; }
+       fi
