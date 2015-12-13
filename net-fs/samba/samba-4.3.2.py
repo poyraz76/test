@@ -59,7 +59,7 @@ def install():
     
     insfile("%s/samba.logrotate" % filesdir,"/etc/logrotate.d/samba")
     insfile("%s/samba.pam" % filesdir,"/etc/pam.d/samba")
-
+    insfile("%s/smb.conf" % filesdir,"/etc/samba/smb.conf")
     
     insfile("packaging/LSB/smb.conf", "/etc/samba/smb.conf.default")
     
