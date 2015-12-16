@@ -17,12 +17,16 @@ def configure():
     system('./configure \
             --prefix=/usr \
             --enable-password-save \
-            --with-plugindir="\/usr/lib/openvpn/" \
+            --with-plugindir="/usr/lib/openvpn/" \
             --enable-iproute2 \
             --enable-systemd')
 
 
 def install():
     raw_install("DESTDIR=%s" % install_dir)
-    
-    insfile("%s/sshdgenkeys.service" % filesdir,"/usr/lib/systemd/system/sshdgenkeys.service")
+    makedirs("/etc/openvpn")
+    makedirs("/usr/share/openvpn")
+    makedirs("/usr/share/openvpn/contrib")
+    insfile("sample/sample-config-files/*", "/usr/share/openvpn/examples/")
+    copy("contrib", "/usr/share/openvpn")
+    insfile("%s/openvpn@.service" % filesdir,"/usr/lib/systemd/system/openvpn@.service")
