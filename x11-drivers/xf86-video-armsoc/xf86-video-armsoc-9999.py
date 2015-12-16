@@ -13,7 +13,7 @@ standard_procedure = False
 get("python_utils", "git_utils")
 
 def prepare():
-    git_clone("git@github.com:mdrjr/xf86-video-armsoc.git", subdir=name)
+    git_clone("git://github.com/mdrjr/xf86-video-armsoc.git", subdir=name)
     
     
 def configure():
